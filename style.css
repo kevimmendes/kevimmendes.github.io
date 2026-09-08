@@ -497,6 +497,19 @@ body {
   border-radius: 20px;
 }
 
+/* ===== CARD "EM BREVE" ===== */
+.em-breve {
+  text-align: center;
+  padding: 3rem 2rem;
+  border-style: dashed;
+}
+
+.em-breve-icon {
+  font-size: 2.5rem;
+  color: #a855f7;
+  margin-bottom: 1rem;
+}
+
 /* ===== CONTATO ===== */
 .contato-grid {
   display: grid;
