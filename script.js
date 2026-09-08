@@ -43,7 +43,7 @@ window.addEventListener('scroll', () => {
 // === EFEITO MÁQUINA DE ESCREVER (typewriter) ===
 const typewriterEl = document.getElementById('typewriter');
 if (typewriterEl) {
-  const palavras = ['FiveM', 'Roblox', 'Python', 'e muito mais!'];
+  const palavras = ['FiveM', 'Roblox', 'Python', 'a web e muito mais!'];
   let indicePalavra = 0;
   let indiceChar = 0;
   let apagando = false;
