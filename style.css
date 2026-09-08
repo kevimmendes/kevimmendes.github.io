@@ -1,5 +1,4 @@
 /* ===== CONFIGURAÇÕES GLOBAIS ===== */
-/* Aplica o "reset" de margens e define as cores do tema */
 * {
   margin: 0;
   padding: 0;
@@ -10,29 +9,45 @@ html {
   scroll-behavior: smooth; /* rolagem suave ao clicar nos links do menu */
 }
 
+/* ===== FUNDO ANIMADO ===== */
+/* O body fica escuro com um gradiente, e o prefixo cria "manchas"
+   de luz colorida que flutuam lentamente pela tela. */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
-  background-color: #0f1117; /* fundo escuro */
-  color: #e6e6e6;             /* texto claro */
+  background-color: #0b0d14;
+  background-image:
+    radial-gradient(ellipse at 20% 10%, rgba(108, 159, 255, 0.18), transparent 55%),
+    radial-gradient(ellipse at 80% 30%, rgba(255, 108, 226, 0.12), transparent 55%),
+    radial-gradient(ellipse at 50% 80%, rgba(80, 220, 200, 0.12), transparent 55%);
+  background-attachment: fixed; /* fundo não "rola" junto com a página */
+  color: #e8eaf0;
   line-height: 1.6;
 }
 
-/* ===== MENU DE NAVEGAÇÃO ===== */
+/* ===== MENU DE NAVEGAÇÃO (vídeo) ===== */
 .navbar {
-  display: flex;               /* organiza logo e links em uma linha */
-  justify-content: space-between; /* logo à esquerda, links à direita */
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
-  background-color: #161a23;
-  position: sticky;            /* menu "gruda" no topo ao rolar */
+  position: sticky;
   top: 0;
   z-index: 10;
+  /* vidro: transparente + desfoque do que está atrás */
+  background: rgba(15, 17, 26, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .logo {
   font-size: 1.4rem;
   font-weight: bold;
-  color: #6c9fff; /* cor de destaque */
+  background: linear-gradient(90deg, #6c9fff, #ff6ce2); /* texto degradê */
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .nav-links {
@@ -42,100 +57,123 @@ body {
 }
 
 .nav-links a {
-  color: #e6e6e6;
+  color: #c9cdd8;
   text-decoration: none;
-  transition: color 0.2s; /* anima a troca de cor */
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  transition: background 0.2s, color 0.2s;
 }
 
-.nav-links a:hover,
+.nav-links a:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
 .nav-links a.ativo {
-  color: #6c9fff;
+  color: #ffffff;
+  background: rgba(108, 159, 255, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(108, 159, 255, 0.3); /* contorno suave */
 }
 
 /* ===== SEÇÃO PRINCIPAL (HERO) ===== */
 .hero {
   text-align: center;
-  padding: 6rem 2rem;
-  background: linear-gradient(180deg, #161a23 0%, #0f1117 100%);
+  padding: 7rem 2rem;
 }
 
 .hero h1 {
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 0.5rem;
+  background: linear-gradient(90deg, #ffffff 0%, #6c9fff 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .destaque {
-  color: #6c9fff;
+  /* sobrescreve o degradê do h1 com cores mais vivas no nome */
+  background: linear-gradient(90deg, #6c9fff, #ff6ce2, #50dcc8);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
 }
 
 .subtitulo {
   font-size: 1.2rem;
-  color: #a7a7a7;
-  margin-bottom: 2rem;
+  color: #a7adbc;
+  margin-bottom: 2.5rem;
 }
 
-/* Botão "chamada para ação" */
+/* Botão transparente (efeito vidro) */
 .botao-cta {
   display: inline-block;
-  background-color: #6c9fff;
-  color: #0f1117;
-  padding: 0.8rem 1.8rem;
-  border-radius: 8px;
+  background: rgba(108, 159, 255, 0.12); /* azul transparente */
+  color: #8fb4ff;
+  padding: 0.8rem 2rem;
+  border: 1px solid rgba(108, 159, 255, 0.45);
+  border-radius: 30px;
   text-decoration: none;
-  font-weight: bold;
-  transition: transform 0.2s, background-color 0.2s;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: transform 0.2s, background 0.2s, box-shadow 0.2s;
 }
 
 .botao-cta:hover {
-  background-color: #8fb4ff;
-  transform: scale(1.05); /* cresce levemente ao passar o mouse */
+  background: rgba(108, 159, 255, 0.25);
+  transform: translateY(-3px); /* sobe ao passar o mouse */
+  box-shadow: 0 8px 30px rgba(108, 159, 255, 0.35); /* brilho externo */
 }
 
 /* ===== SEÇÕES GENÉRICAS ===== */
 .secao {
-  max-width: 900px; /* o conteúdo não fica espalhado demais */
+  max-width: 900px;
   margin: 0 auto;
   padding: 4rem 2rem;
 }
 
 .secao h2 {
   font-size: 2rem;
-  color: #6c9fff;
+  color: #8fb4ff;
   margin-bottom: 1rem;
-  border-bottom: 2px solid #2a3040;
   padding-bottom: 0.5rem;
+  border-bottom: 2px solid rgba(108, 159, 255, 0.25);
 }
 
 .legenda {
-  color: #a7a7a7;
+  color: #a7adbc;
   margin-bottom: 2rem;
 }
 
 /* ===== GRADE DE PROJETOS ===== */
-/* grid cria várias colunas automaticamente: 1 no celular, 3 no computador */
 .grade-projetos {
   display: grid;
   gap: 1.5rem;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+/* Cards "de vidro": transparentes com desfoque e borda suave */
 .card {
-  background-color: #161a23;
-  border: 1px solid #2a3040;
-  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
   padding: 1.5rem;
-  transition: transform 0.2s, border-color 0.2s;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 0.2s, border-color 0.2s, background 0.2s;
 }
 
 .card:hover {
-  transform: translateY(-5px); /* card sobe ao passar o mouse */
-  border-color: #6c9fff;
+  transform: translateY(-5px);
+  border-color: rgba(108, 159, 255, 0.5);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .card-placeholder {
-  /* quadrado cinza onde futuramente vai a imagem/captura do projeto */
-  background-color: #2a3040;
-  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 10px;
   height: 140px;
   display: flex;
   align-items: center;
@@ -149,12 +187,12 @@ body {
 }
 
 .card p {
-  color: #a7a7a7;
+  color: #a7adbc;
   font-size: 0.95rem;
   margin-bottom: 1rem;
 }
 
-/* ===== TAGS (Linguagens/Tecnologias) ===== */
+/* ===== TAGS ===== */
 .tags {
   display: flex;
   flex-wrap: wrap;
@@ -162,11 +200,12 @@ body {
 }
 
 .tag {
-  background-color: #1f2a3d;
+  background: rgba(108, 159, 255, 0.12);
   color: #8fb4ff;
   font-size: 0.8rem;
-  padding: 0.25rem 0.7rem;
-  border-radius: 20px; /* formato de pílula */
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  border: 1px solid rgba(108, 159, 255, 0.25);
 }
 
 /* ===== CONTATO ===== */
@@ -177,14 +216,25 @@ body {
 
 .lista-contato li {
   margin-bottom: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: rgba(255, 255, 255, 0.04); /* caixinhas transparentes */
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+}
+
+.lista-contato strong {
+  color: #8fb4ff;
 }
 
 /* ===== RODAPÉ ===== */
 .rodape {
   text-align: center;
   padding: 2rem;
-  background-color: #161a23;
-  color: #a7a7a7;
+  background: rgba(15, 17, 26, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  color: #a7adbc;
   font-size: 0.9rem;
   margin-top: 2rem;
 }
