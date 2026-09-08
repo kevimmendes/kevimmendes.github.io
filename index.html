@@ -1,99 +1,214 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <!-- "meta charset" garante que acentos (ç, ã) apareçam corretamente -->
   <meta charset="UTF-8">
-  <!-- Faz o site se adaptar a celulares -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Título que aparece na aba do navegador -->
-  <title>Meu Portfólio</title>
-  <!-- Aqui conectamos o CSS (visual) com o HTML -->
+  <title>Kévim Mendes · Portfólio</title>
+  <!-- Fontes estilo "gamer" (mesmas do site de exemplo) -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600;700&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Ícones (Font Awesome) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Camada onde o canvas de partículas é desenhado -->
+  <div id="particles-bg"></div>
 
-  <!-- ===== MENU DE NAVEGAÇÃO ===== -->
-  <nav class="navbar">
-    <div class="logo">Kévim Mendes</div>
-    <ul class="nav-links">
-      <li><a href="#sobre">Sobre</a></li>
-      <li><a href="#projetos">Projetos</a></li>
-      <li><a href="#contato">Contato</a></li>
-    </ul>
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#inicio" class="nav-logo">
+        <span class="gradient-text">KEVIM MENDES</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#inicio" class="nav-link active">INÍCIO</a></li>
+        <li><a href="#sobre" class="nav-link">SOBRE</a></li>
+        <li><a href="#projetos" class="nav-link">PROJETOS</a></li>
+        <li><a href="#contato" class="nav-link">CONTATO</a></li>
+      </ul>
+      <div class="nav-cta">
+        <a href="#projetos" class="btn-nav-cta">VER PROJETOS</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
   </nav>
 
-  <!-- ===== SEÇÃO PRINCIPAL (HERO) ===== -->
+  <!-- ===== HERO ===== -->
   <header class="hero" id="inicio">
-    <h1>Olá, eu sou <span class="destaque">Kévim Mendes</span></h1>
-    <p class="subtitulo">Desenvolvedor de sistemas, mods e ferramentas em Lua, Python e Roblox.</p>
-    <a href="#projetos" class="botao-cta">Ver meus projetos</a>
+    <div class="hero-content">
+      <div class="hero-badge animate-fade-down">
+        <i class="fas fa-code"></i> Desenvolvedor de scripts, jogos e sistemas
+      </div>
+      <h1 class="hero-title animate-fade-up">
+        <span class="gradient-text">KEVIM MENDES</span>
+      </h1>
+      <p class="hero-subtitle animate-fade-up delay-1">
+        Crio sistemas para <span class="typewriter" id="typewriter"></span>
+      </p>
+      <div class="hero-stats animate-fade-up delay-2">
+        <div class="stat-item">
+          <span class="stat-number" data-target="6">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Projetos</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="4">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Linguagens</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="3">0</span><span class="stat-suffix">+</span>
+          <span class="stat-label">Plataformas</span>
+        </div>
+      </div>
+      <div class="hero-buttons animate-fade-up delay-3">
+        <a href="#projetos" class="btn-primary">
+          <i class="fas fa-rocket"></i> VER PROJETOS
+        </a>
+        <a href="#sobre" class="btn-secondary">
+          <i class="fas fa-user"></i> SOBRE MIM
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-indicator">
+      <div class="mouse"><div class="wheel"></div></div>
+      <span>Role para baixo</span>
+    </div>
   </header>
 
   <!-- ===== SOBRE ===== -->
-  <section class="secao" id="sobre">
-    <h2>Sobre mim</h2>
-    <p>
-      Escreva aqui um pequeno texto apresentando você. Exemplo: "Crio scripts para
-      FiveM e Roblox, ferramentas de análise de áudio e sistemas interativos.
-      Gosto de transformar ideias em código funcional."
-    </p>
+  <section class="section sobre" id="sobre">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-info-circle"></i> CONHEÇA</span>
+        <h2 class="section-title">Quem é <span class="gradient-text">Kévim Mendes</span></h2>
+        <p class="section-subtitle">Transformo ideias em código funcional</p>
+      </div>
+      <div class="sobre-grid">
+        <div class="sobre-text">
+          <p>Crio <strong>scripts e sistemas</strong> para jogos (FiveM e Roblox), ferramentas de análise de áudio em Python e interfaces web. Gosto de resolver problemas com código limpo e funcional.</p>
+          <div class="features-mini">
+            <div class="feature-mini-item">
+              <div class="feature-mini-icon"><i class="fas fa-gamepad"></i></div>
+              <div>
+                <h4>FiveM</h4>
+                <p>Sistemas de roubo, reféns e interação com minigames</p>
+              </div>
+            </div>
+            <div class="feature-mini-item">
+              <div class="feature-mini-icon"><i class="fas fa-cube"></i></div>
+              <div>
+                <h4>Roblox</h4>
+                <p>Sistemas de natação, capuz e mecânicas de gameplay</p>
+              </div>
+            </div>
+            <div class="feature-mini-item">
+              <div class="feature-mini-icon"><i class="fas fa-headphones"></i></div>
+              <div>
+                <h4>Áudio</h4>
+                <p>Análise e separação de instrumentos em Python/Flask</p>
+              </div>
+            </div>
+            <div class="feature-mini-item">
+              <div class="feature-mini-icon"><i class="fas fa-globe"></i></div>
+              <div>
+                <h4>Web</h4>
+                <p>HTML, CSS, JavaScript — como este portfólio</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <!-- ===== ÁREA DE PROJETOS ===== -->
-  <section class="secao" id="projetos">
-    <h2>Projetos</h2>
-    <p class="legenda">Aqui vão aparecer os seus projetos. Cada card abaixo é um modelo pronto — é só trocar o texto pela descrição real.</p>
-
-    <div class="grade-projetos">
-      <!-- CARD 1: copie este bloco para adicionar mais projetos -->
-      <article class="card">
-        <div class="card-placeholder">🖼️</div>
-        <h3>Nome do Projeto 1</h3>
-        <p>Breve descrição do que o projeto faz e qual linguagem usa.</p>
-        <div class="tags">
-          <span class="tag">Lua</span>
-          <span class="tag">FiveM</span>
+  <!-- ===== PROJETOS ===== -->
+  <section class="section projetos" id="projetos">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-folder-open"></i> TRABALHOS</span>
+        <h2 class="section-title">Meus <span class="gradient-text">Projetos</span></h2>
+        <p class="section-subtitle">Cada card é um modelo pronto — basta preencher com seus projetos reais</p>
+      </div>
+      <div class="plans-grid">
+        <!-- CARD 1: copie este bloco para adicionar mais projetos -->
+        <div class="plan-card" data-plan="projeto1">
+          <div class="plan-badge-type">FIVEM</div>
+          <div class="plan-header">
+            <h3 class="plan-name">Nome do Projeto 1</h3>
+          </div>
+          <p class="p-descricao">Breve descrição do que o projeto faz e qual linguagem usa.</p>
+          <div class="tags">
+            <span class="tag">Lua</span>
+            <span class="tag">FiveM</span>
+          </div>
         </div>
-      </article>
 
-      <!-- CARD 2 -->
-      <article class="card">
-        <div class="card-placeholder">🖼️</div>
-        <h3>Nome do Projeto 2</h3>
-        <p>Breve descrição do que o projeto faz e qual linguagem usa.</p>
-        <div class="tags">
-          <span class="tag">Python</span>
+        <!-- CARD 2 -->
+        <div class="plan-card" data-plan="projeto2">
+          <div class="plan-badge-type">PYTHON</div>
+          <div class="plan-header">
+            <h3 class="plan-name">Nome do Projeto 2</h3>
+          </div>
+          <p class="p-descricao">Breve descrição do que o projeto faz e qual linguagem usa.</p>
+          <div class="tags">
+            <span class="tag">Python</span>
+            <span class="tag">Flask</span>
+          </div>
         </div>
-      </article>
 
-      <!-- CARD 3 -->
-      <article class="card">
-        <div class="card-placeholder">🖼️</div>
-        <h3>Nome do Projeto 3</h3>
-        <p>Breve descrição do que o projeto faz e qual linguagem usa.</p>
-        <div class="tags">
-          <span class="tag">Lua</span>
-          <span class="tag">Roblox</span>
+        <!-- CARD 3 -->
+        <div class="plan-card" data-plan="projeto3">
+          <div class="plan-badge-type">ROBLOX</div>
+          <div class="plan-header">
+            <h3 class="plan-name">Nome do Projeto 3</h3>
+          </div>
+          <p class="p-descricao">Breve descrição do que o projeto faz e qual linguagem usa.</p>
+          <div class="tags">
+            <span class="tag">Lua</span>
+            <span class="tag">Roblox</span>
+          </div>
         </div>
-      </article>
+      </div>
     </div>
   </section>
 
   <!-- ===== CONTATO ===== -->
-  <section class="secao" id="contato">
-    <h2>Contato</h2>
-    <p>Quer falar comigo? Me chame em:</p>
-    <ul class="lista-contato">
-      <li>📧 <strong>kevimneves9@gmail.com</strong></li>
-      <li>🌐 <strong>github.com/kevimneves9-cell</strong></li>
-    </ul>
+  <section class="section contato" id="contato">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fas fa-headset"></i> CONTATO</span>
+        <h2 class="section-title">Fale <span class="gradient-text">Comigo</span></h2>
+        <p class="section-subtitle">Estou disponível para projetos e parcerias</p>
+      </div>
+      <div class="contato-grid">
+        <div class="contato-card">
+          <div class="contato-icon"><i class="fas fa-envelope"></i></div>
+          <h3>E-mail</h3>
+          <p>kevimneves9@gmail.com</p>
+          <a href="mailto:kevimneves9@gmail.com" class="btn-contato">Enviar E-mail</a>
+        </div>
+        <div class="contato-card">
+          <div class="contato-icon"><i class="fab fa-github"></i></div>
+          <h3>GitHub</h3>
+          <p>kevimneves9-cell</p>
+          <a href="https://github.com/kevimneves9-cell" target="_blank" class="btn-contato">Ver Perfil</a>
+        </div>
+      </div>
+    </div>
   </section>
 
-  <footer class="rodape">
-    <p>&copy; 2026 Kévim Mendes · Feito com ❤️</p>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>&copy; 2026 Kévim Mendes · Todos os direitos reservados.</p>
+      </div>
+    </div>
   </footer>
 
-  <!-- Aqui conectamos o JavaScript (interatividade) com o HTML -->
   <script src="script.js"></script>
 </body>
 </html>
