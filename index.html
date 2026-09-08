@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <!-- "meta charset" garante que acentos (ç, ã) apareçam corretamente -->
+  <meta charset="UTF-8">
+  <!-- Faz o site se adaptar a celulares -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Título que aparece na aba do navegador -->
+  <title>Meu Portfólio</title>
+  <!-- Aqui conectamos o CSS (visual) com o HTML -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ===== MENU DE NAVEGAÇÃO ===== -->
+  <nav class="navbar">
+    <div class="logo">MeuNome</div>
+    <ul class="nav-links">
+      <li><a href="#sobre">Sobre</a></li>
+      <li><a href="#projetos">Projetos</a></li>
+      <li><a href="#contato">Contato</a></li>
+    </ul>
+  </nav>
+
+  <!-- ===== SEÇÃO PRINCIPAL (HERO) ===== -->
+  <header class="hero" id="inicio">
+    <h1>Olá, eu sou <span class="destaque">MeuNome</span></h1>
+    <p class="subtitulo">Desenvolvedor de sistemas, mods e ferramentas em Lua, Python e Roblox.</p>
+    <a href="#projetos" class="botao-cta">Ver meus projetos</a>
+  </header>
+
+  <!-- ===== SOBRE ===== -->
+  <section class="secao" id="sobre">
+    <h2>Sobre mim</h2>
+    <p>
+      Escreva aqui um pequeno texto apresentando você. Exemplo: "Crio scripts para
+      FiveM e Roblox, ferramentas de análise de áudio e sistemas interativos.
+      Gosto de transformar ideias em código funcional."
+    </p>
+  </section>
+
+  <!-- ===== ÁREA DE PROJETOS ===== -->
+  <section class="secao" id="projetos">
+    <h2>Projetos</h2>
+    <p class="legenda">Aqui vão aparecer os seus projetos. Cada card abaixo é um modelo pronto — é só trocar o texto pela descrição real.</p>
+
+    <div class="grade-projetos">
+      <!-- CARD 1: copie este bloco para adicionar mais projetos -->
+      <article class="card">
+        <div class="card-placeholder">🖼️</div>
+        <h3>Nome do Projeto 1</h3>
+        <p>Breve descrição do que o projeto faz e qual linguagem usa.</p>
+        <div class="tags">
+          <span class="tag">Lua</span>
+          <span class="tag">FiveM</span>
+        </div>
+      </article>
+
+      <!-- CARD 2 -->
+      <article class="card">
+        <div class="card-placeholder">🖼️</div>
+        <h3>Nome do Projeto 2</h3>
+        <p>Breve descrição do que o projeto faz e qual linguagem usa.</p>
+        <div class="tags">
+          <span class="tag">Python</span>
+        </div>
+      </article>
+
+      <!-- CARD 3 -->
+      <article class="card">
+        <div class="card-placeholder">🖼️</div>
+        <h3>Nome do Projeto 3</h3>
+        <p>Breve descrição do que o projeto faz e qual linguagem usa.</p>
+        <div class="tags">
+          <span class="tag">Roblox</span>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===== CONTATO ===== -->
+  <section class="secao" id="contato">
+    <h2>Contato</h2>
+    <p>Quer falar comigo? Me chame em:</p>
+    <ul class="lista-contato">
+      <li>📧 <strong>email@gmail.com</strong></li>
+      <li>🌐 <strong>github.com/seu-usuario</strong></li>
+      <li>💬 <strong>Discord: seu_usuario</strong></li>
+    </ul>
+  </section>
+
+  <footer class="rodape">
+    <p>&copy; 2026 MeuNome · Feito com ❤️</p>
+  </footer>
+
+  <!-- Aqui conectamos o JavaScript (interatividade) com o HTML -->
+  <script src="script.js"></script>
+</body>
+</html>
