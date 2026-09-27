@@ -1,0 +1,28 @@
+# Nao e necessario nada disto num site estatico, mas fica aqui
+# por causa dos editores e das ferramentas.
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Logs
+*.log
+npm-debug.log*
+yarn-error.log*
+
+# Ambiente
+.env
+.env.local
+
+# Node (nao e usado no site, mas inofensivo)
+node_modules/
+
+# Builds
+dist/
+build/
